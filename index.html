@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Aniversário, Miguelito</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         TELA DE ENTRADA
+    ================================================== -->
+
+    <div id="entrada">
+
+        <div class="aviso">
+            ⚠️ TRANSMISSÃO INTERGALÁCTICA ⚠️
+        </div>
+
+
+        <h1>
+            ENTER THE CHAOS
+        </h1>
+
+
+        <p>
+            UMA MENSAGEM FOI ENVIADA PARA MIGUEL
+        </p>
+
+
+        <button id="botaoEntrar">
+            ENTRAR 🤘
+        </button>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         PÁGINA PRINCIPAL
+    ================================================== -->
+
+    <main id="principal">
+
+
+        <!-- ESTRELAS -->
+
+        <div class="estrelas"></div>
+
+
+        <!-- LUA -->
+
+        <div class="lua"></div>
+
+
+
+        <section class="conteudo">
+
+
+            <!-- ==================================================
+                 INTRODUÇÃO
+            ================================================== -->
+
+            <div class="tag">
+                ROCK • SPACE • FRIENDSHIP
+            </div>
+
+
+            <h2>
+                HAPPY
+                <br>
+                BIRTHDAY
+            </h2>
+
+
+            <div class="nome">
+                MIGUEL
+            </div>
+
+
+            <!-- CAVEIRA -->
+
+            <div class="caveira">
+                💀
+            </div>
+
+
+
+            <p class="frase">
+
+                Algumas pessoas passam pela nossa vida.
+
+                <br>
+
+                Outras deixam uma marca impossível de apagar.
+
+                <br><br>
+
+                Hoje o universo aumentou o volume
+                para comemorar você.
+
+            </p>
+
+
+
+            <!-- ==================================================
+                 CARTÃO DA MENSAGEM
+            ================================================== -->
+
+            <section class="card">
+
+                <h3>
+                    PARA O AMIGO MAIS TONTO QUE TENHO 🖤
+                </h3>
+
+
+                <p>
+
+                    Feliz aniversário, Miguel! 
+
+                    <br><br>
+
+                    Que esse novo capítulo da sua vida seja
+                    tão épico quanto aquela música que você
+                    coloca no último volume.
+
+                    <br><br>
+
+                    Que nunca faltem histórias para contar,
+                    pessoas incríveis ao seu lado, sonhos para
+                    conquistar e muitos motivos para continuar
+                    seguindo em frente.
+
+                    <br><br>
+
+                    Obrigada por ser um amigo tão importante.
+                    Espero que você saiba o quanto é especial
+                    para mim.
+
+                    <br><br>
+
+                    Que venha mais um ano de caos, risadas,
+                    aventuras, música e momentos que a gente
+                    vai lembrar por muito tempo.
+
+                    <br><br>
+
+                    <strong>
+                        FELIZ ANIVERSÁRIO! 🖤🤘
+                    </strong>
+
+                </p>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 MÚSICA
+            ================================================== -->
+
+            <section class="musica">
+
+
+                <h3>
+                    🎸 TRILHA SONORA 🎸
+                </h3>
+
+
+                <p>
+
+                    Essa música é especialmente para você.
+
+                    <br>
+
+                    Aperte o play e aumente o volume. 🔊
+
+                </p>
+
+
+                <!-- PLAYER -->
+
+                <audio controls id="player">
+
+                    <source
+                        src="musica.mp3"
+                        type="audio/mpeg"
+                    >
+
+                    Seu navegador não suporta áudio.
+
+                </audio>
+
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 BOTÃO DO CAOS
+            ================================================== -->
+
+            <button id="botaoCaos">
+
+                ⚡ LIBERAR O CAOS ⚡
+
+            </button>
+
+
+
+            <footer>
+
+                Feito com amizade, rock e um pouco de caos. 💀
+
+            </footer>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+
+        /* ==================================================
+           BOTÃO ENTRAR
+        ================================================== */
+
+        const botaoEntrar =
+            document.getElementById("botaoEntrar");
+
+
+        const entrada =
+            document.getElementById("entrada");
+
+
+        const principal =
+            document.getElementById("principal");
+
+
+
+        botaoEntrar.addEventListener("click", function () {
+
+
+            entrada.classList.add("sumir");
+
+
+            setTimeout(function () {
+
+                entrada.style.display = "none";
+
+            }, 1000);
+
+
+        });
+
+
+
+        /* ==================================================
+           BOTÃO LIBERAR O CAOS
+        ================================================== */
+
+        const botaoCaos =
+            document.getElementById("botaoCaos");
+
+
+
+        botaoCaos.addEventListener("click", function () {
+
+
+            for (let i = 0; i < 80; i++) {
+
+
+                const particula =
+                    document.createElement("div");
+
+
+                const simbolos =
+                    ["💀", "🤘", "★", "✦", "⚡"];
+
+
+                particula.innerHTML =
+                    simbolos[
+                        Math.floor(
+                            Math.random() * simbolos.length
+                        )
+                    ];
+
+
+                particula.classList.add("particula");
+
+
+                particula.style.left =
+                    Math.random() * 100 + "vw";
+
+
+                particula.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+
+                document.body.appendChild(particula);
+
+
+
+                setTimeout(function () {
+
+                    particula.remove();
+
+                }, 5000);
+
+            }
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

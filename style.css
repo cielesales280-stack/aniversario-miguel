@@ -1,0 +1,1027 @@
+/* ==================================================
+   CONFIGURAÇÕES
+================================================== */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Metal+Mania&display=swap'
+);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background: #000;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+
+/* ==================================================
+   TELA DE ENTRADA
+================================================== */
+
+#entrada {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #3b0000 0%,
+            #130000 35%,
+            #050505 70%,
+            #000 100%
+        );
+
+    transition: opacity 1s ease;
+
+}
+
+
+
+/* efeito de estrelas na entrada */
+
+#entrada::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    opacity: 0.3;
+
+    pointer-events: none;
+
+}
+
+
+
+/* ==================================================
+   AVISO
+================================================== */
+
+.aviso {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 25px;
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+}
+
+
+
+/* ==================================================
+   TÍTULO DA ENTRADA
+================================================== */
+
+#entrada h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        'Metal Mania',
+        cursive;
+
+    font-size:
+        clamp(45px, 9vw, 100px);
+
+    color: white;
+
+    text-shadow:
+
+        0 0 5px #ff7777,
+
+        0 0 15px #ff0000,
+
+        0 0 30px #ff0000,
+
+        0 0 60px #700000;
+
+    animation:
+        pulsar 2s infinite;
+
+}
+
+
+
+/* ==================================================
+   TEXTO DA ENTRADA
+================================================== */
+
+#entrada p {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+    color: #ccc;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+}
+
+
+
+/* ==================================================
+   BOTÃO ENTRAR
+================================================== */
+
+#botaoEntrar {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 30px;
+
+    padding: 18px 50px;
+
+    background: transparent;
+
+    border: 2px solid #ff4444;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+}
+
+
+
+#botaoEntrar:hover {
+
+    background: #850000;
+
+    box-shadow:
+
+        0 0 10px red,
+
+        0 0 30px red,
+
+        0 0 60px #700000;
+
+    transform: scale(1.08);
+
+}
+
+
+
+#botaoEntrar:active {
+
+    transform: scale(0.95);
+
+}
+
+
+
+/* ==================================================
+   ANIMAÇÃO DE SAÍDA
+================================================== */
+
+#entrada.sumir {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+
+/* ==================================================
+   PÁGINA PRINCIPAL
+================================================== */
+
+#principal {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #280000 0%,
+            #0b0000 30%,
+            #030303 65%,
+            #000 100%
+        );
+
+    overflow: hidden;
+
+}
+
+
+
+/* ==================================================
+   ESTRELAS
+================================================== */
+
+.estrelas {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            #999 1px,
+            transparent 1px
+        );
+
+    background-size:
+
+        80px 80px,
+
+        130px 130px;
+
+    opacity: 0.35;
+
+    animation:
+        moverEstrelas 25s linear infinite;
+
+}
+
+
+
+@keyframes moverEstrelas {
+
+    from {
+
+        transform:
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            translateY(100px);
+
+    }
+
+}
+
+
+
+/* ==================================================
+   LUA
+================================================== */
+
+.lua {
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 70px;
+
+    right: 10%;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #eee;
+
+    box-shadow:
+
+        0 0 15px white,
+
+        0 0 35px red,
+
+        0 0 80px #800000;
+
+    overflow: hidden;
+
+}
+
+
+
+.lua::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #080000;
+
+    left: 55px;
+
+    top: -15px;
+
+}
+
+
+
+/* ==================================================
+   CONTEÚDO
+================================================== */
+
+.conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 110px 20px;
+
+    text-align: center;
+
+}
+
+
+
+/* ==================================================
+   TAG
+================================================== */
+
+.tag {
+
+    color: #ff3333;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+/* ==================================================
+   HAPPY BIRTHDAY
+================================================== */
+
+h2 {
+
+    font-family:
+        'Metal Mania',
+        cursive;
+
+    font-size:
+        clamp(55px, 10vw, 110px);
+
+    line-height: 0.9;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 5px #ff7777,
+
+        0 0 15px red,
+
+        0 0 30px #900000,
+
+        0 0 60px #500000;
+
+}
+
+
+
+/* ==================================================
+   MIGUEL
+================================================== */
+
+.nome {
+
+    margin-top: 30px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        clamp(45px, 8vw, 90px);
+
+    font-weight: 900;
+
+    color: #eee;
+
+    text-shadow:
+
+        0 0 10px red,
+
+        0 0 30px #900000,
+
+        0 0 60px #500000;
+
+}
+
+
+
+/* ==================================================
+   CAVEIRA
+================================================== */
+
+.caveira {
+
+    margin: 45px 0;
+
+    font-size: 150px;
+
+    filter:
+
+        drop-shadow(
+            0 0 10px red
+        )
+
+        drop-shadow(
+            0 0 30px #800000
+        );
+
+    animation:
+        flutuar 3s ease-in-out infinite;
+
+}
+
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px);
+
+    }
+
+}
+
+
+
+/* ==================================================
+   FRASE
+================================================== */
+
+.frase {
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    color: #ccc;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* ==================================================
+   CARTÃO
+================================================== */
+
+.card {
+
+    max-width: 750px;
+
+    margin: 70px auto;
+
+    padding: 45px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(35, 0, 0, 0.9),
+            rgba(3, 3, 3, 0.95)
+        );
+
+    border: 1px solid #700000;
+
+    border-left:
+        3px solid red;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255, 0, 0, 0.2),
+
+        inset 0 0 30px
+        rgba(150, 0, 0, 0.1);
+
+    transition: 0.4s;
+
+}
+
+
+
+.card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+
+        0 0 35px
+        rgba(255, 0, 0, 0.35);
+
+}
+
+
+
+/* ==================================================
+   TÍTULO DO CARTÃO
+================================================== */
+
+.card h3 {
+
+    margin-bottom: 25px;
+
+    font-family:
+        'Metal Mania',
+        cursive;
+
+    font-size: 32px;
+
+    color: #ff3333;
+
+    text-shadow:
+
+        0 0 10px red;
+
+}
+
+
+
+/* ==================================================
+   TEXTO
+================================================== */
+
+.card p {
+
+    color: #ccc;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+
+
+.card strong {
+
+    color: white;
+
+    text-shadow:
+
+        0 0 10px red,
+
+        0 0 20px #800000;
+
+}
+
+
+
+/* ==================================================
+   MÚSICA
+================================================== */
+
+.musica {
+
+    max-width: 650px;
+
+    margin: 60px auto;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.85);
+
+    border:
+        1px solid #444;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255, 0, 0, 0.15);
+
+}
+
+
+
+.musica h3 {
+
+    margin-bottom: 15px;
+
+    font-family:
+        'Metal Mania',
+        cursive;
+
+    font-size: 30px;
+
+    color: white;
+
+}
+
+
+
+.musica p {
+
+    margin-bottom: 20px;
+
+    color: #888;
+
+    line-height: 1.6;
+
+}
+
+
+
+audio {
+
+    width: 100%;
+
+}
+
+
+
+/* ==================================================
+   BOTÃO CAOS
+================================================== */
+
+#botaoCaos {
+
+    padding: 17px 35px;
+
+    background: transparent;
+
+    border: 2px solid #a00000;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+}
+
+
+
+#botaoCaos:hover {
+
+    background: #850000;
+
+    border-color: red;
+
+    box-shadow:
+
+        0 0 10px red,
+
+        0 0 30px red,
+
+        0 0 60px #700000;
+
+    transform: scale(1.08);
+
+}
+
+
+
+/* ==================================================
+   PARTÍCULAS
+================================================== */
+
+.particula {
+
+    position: fixed;
+
+    top: -30px;
+
+    z-index: 9999;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation:
+        cair linear forwards;
+
+}
+
+
+
+@keyframes cair {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* ==================================================
+   RODAPÉ
+================================================== */
+
+footer {
+
+    margin-top: 80px;
+
+    padding-bottom: 30px;
+
+    color: #555;
+
+    font-size: 13px;
+
+}
+
+
+
+/* ==================================================
+   PULSAÇÃO
+================================================== */
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.03);
+
+    }
+
+}
+
+
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 600px) {
+
+
+    #entrada h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    #entrada p {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .aviso {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .lua {
+
+        width: 100px;
+
+        height: 100px;
+
+        top: 30px;
+
+        right: 5%;
+
+    }
+
+
+    .lua::after {
+
+        width: 100px;
+
+        height: 100px;
+
+        left: 30px;
+
+        top: -8px;
+
+    }
+
+
+    .conteudo {
+
+        padding-top: 170px;
+
+    }
+
+
+    .caveira {
+
+        font-size: 100px;
+
+    }
+
+
+    .card {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .card h3 {
+
+        font-size: 26px;
+
+    }
+
+
+    .card p {
+
+        font-size: 16px;
+
+    }
+
+
+    .musica {
+
+        padding: 20px;
+
+    }
+
+}
+
+
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width: 400px) {
+
+
+    #entrada h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    h2 {
+
+        font-size: 55px;
+
+    }
+
+
+    .nome {
+
+        font-size: 45px;
+
+    }
+
+
+    .caveira {
+
+        font-size: 80px;
+
+    }
+
+}
